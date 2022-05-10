@@ -4,15 +4,9 @@ import constData from "../../static/constData";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
+import html2canvas from 'html2canvas';
 
 const router = useRouter();
-
-// onMounted(()=>{
-//     if(window.localStorage.getItem("username") == null || window.localStorage.getItem("username") == ""){
-//         ElMessage.warning("Please login first");
-//         router.push("/login");
-//     }
-// })
 
 const result_state = ref(false)
 
@@ -172,8 +166,17 @@ function start_jisuan() {
 
   jisuan(T.value[0]);
 }
+
+
+function getPdf(){
+  console.log(document.body);
+  html2canvas(document.body).then(function(canvas) {
+    document.body.appendChild(canvas);
+  });
+}
 </script>
 <template>
+  <button @click="getPdf">shar</button>
   <div class="w-9/12 mx-auto">
     <div class="w-full mt-2">
       <img src="@/assets/img/video.png"/>
