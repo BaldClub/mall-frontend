@@ -33,3 +33,5 @@ jobs:
         password: ${{secrets.PASSWORD}}
         local: "dist"
         remote: ${{ secrets.SERVER_PATH }}
+
+

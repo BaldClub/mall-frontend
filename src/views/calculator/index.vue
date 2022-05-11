@@ -9,6 +9,8 @@ import { inportPdf } from '../../utils/htmlToPdf';
 
 const router = useRouter();
 
+const resultPdf = ref(Element)
+
 const result_state = ref(false)
 
 const param = ref(0);
@@ -170,7 +172,7 @@ function start_jisuan() {
 
 
 function getPdf(){
-  inportPdf(document.body);
+  inportPdf(resultPdf.value);
 }
 </script>
 <template>
@@ -347,7 +349,7 @@ function getPdf(){
       </div>
     </div>
 
-    <div id="result" :class="{'hidden':!result_state}">
+    <div id="result" ref="resultPdf" :class="{'hidden':!result_state}">
       <div class="options">
         <h4>Options</h4>
         <ul>
