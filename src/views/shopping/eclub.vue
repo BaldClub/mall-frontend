@@ -1,11 +1,11 @@
 <template>
   <div class="w-2/3 mx-auto grid grid-cols-1">
     <div class="mx-auto w-full">
-      <img src="@/assets/img/eclub页面.png" class="w-full" alt />
+      <img src="@/assets/img/eclub页面.png" class="w-full"/>
     </div>
 
     <div class="mx-auto py-5">
-      <img src="@/assets/img/商标r.png" class="w-2/3 mx-auto" alt />
+      <img src="@/assets/img/商标r.png" class="w-2/3 mx-auto"/>
     </div>
     <div class="py-3 lg:w-4/5 w-full mx-auto">
       <div class="text-2xl py-4 font-bold">Join our Email Club and SAVE!</div>

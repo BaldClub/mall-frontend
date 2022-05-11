@@ -4,7 +4,8 @@ import constData from "../../static/constData";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
-import html2canvas from 'html2canvas';
+import { inportPdf } from '../../utils/htmlToPdf';
+// import html2canvas from 'html2canvas';
 
 const router = useRouter();
 
@@ -169,14 +170,11 @@ function start_jisuan() {
 
 
 function getPdf(){
-  console.log(document.body);
-  html2canvas(document.body).then(function(canvas) {
-    document.body.appendChild(canvas);
-  });
+  inportPdf(document.body);
 }
 </script>
 <template>
-  <button @click="getPdf">shar</button>
+  <!-- <button @click="getPdf">shar</button> -->
   <div class="w-9/12 mx-auto">
     <div class="w-full mt-2">
       <img src="@/assets/img/video.png"/>
@@ -364,6 +362,7 @@ function getPdf(){
           </li>
         </ul>
       </div>
+      <el-button type="danger" size="large" @click="getPdf"> PDF</el-button>
       <div class="result">
         <h4>Result</h4>
         <h5>Based on 2 treads</h5>
