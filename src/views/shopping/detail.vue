@@ -23,8 +23,9 @@ onBeforeMount(() => {
     url: constData.url + "/system/product/getProduct/" + id,
   })
     .then((res) => {
+      console.log(res.data.data);
+      
       data.value = res.data.data;
-      img.value = res.data.data.imgList;
       img.value =
         constData.url +
         "/static/" +
@@ -58,7 +59,7 @@ function changeImg(item) {
   <div class="grid grid-cols-1 xl:grid-cols-2 w-5/6 mx-auto mt-3">
     <div class="col-span-1 mx-auto" style="width:500px">
       <div class="mx-auto">
-        <img class="border-2 w-full" :src="img" alt />
+        <img class="border-2 w-full" :src="img" />
       </div>
       <div class="w-2/3 flex flex-wrap mx-auto" style="width:500px">
         <div
@@ -67,13 +68,13 @@ function changeImg(item) {
           :key="index"
           @click="changeImg(item)"
         >
-          <img :src="constData.url + '/static/' + data.image + '/'  + data.imgList[index] " alt />
+          <img :src="constData.url + '/static/' + data.image + '/'  + data.imgList[index] " />
         </div>
       </div>
     </div>
     <div class="col-span-1">
-      <h1 class="md:text-3xl text-gl font-black">STAIR TREND TEMPLATE TOOL</h1>
-      <p class="font-black md:text-2xl text-base">sku: LTGH-001</p>
+      <h1 class="md:text-3xl text-gl font-black">{{ data.name }}</h1>
+      <p class="font-black md:text-2xl text-base">sku: {{ data.sku }}</p>
       <div class="flex">
         <StarIcon class="w-6 h-6 block text-yellow-300" />
         <StarIcon class="w-6 h-6 block text-yellow-300" />
@@ -85,25 +86,25 @@ function changeImg(item) {
         <button
           class="text-red-400 h-8 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
-          <img class="w-6" src="../../assets/img/share-RED.png" alt />
+          <img class="w-6" src="../../assets/img/share-RED.png" />
           share
         </button>
       </div>
       <div class="w-auto">
-        <img src="../../assets/img/uTools_1647697823271.png" alt />
+        <img src="../../assets/img/uTools_1647697823271.png" />
       </div>
       <p class="font-black text-xl m-2">
         US
-        <span class="text-red-600 text-3xl">$98.9</span> &nbsp;&nbsp;Free Shipping In The US
+        <span class="text-red-600 text-3xl">${{ data.price }}</span> &nbsp;&nbsp;Free Shipping In The US
       </p>
       <div class="my-6">
         <span class="text-xl">Number:</span>
         <el-input-number v-model="num" :min="1" :step="1" :size="1" />
       </div>
       <div class="w-auto">
-        <button
-          class="md:w-1/3 w-auto p-1 md:p-4 hover:bg-gray-300 border-2 rounded-xl"
-        >Amazon To Buy</button>
+        <a :href="data.type">
+          <button class="md:w-1/3 w-auto p-1 md:p-4 hover:bg-gray-300 border-2 rounded-xl">Amazon To Buy</button>
+        </a>
       </div>
       <div class="w-auto">
         <button
