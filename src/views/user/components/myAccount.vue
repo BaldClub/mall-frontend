@@ -1,4 +1,48 @@
 <script setup lang="ts">
+import axios from "axios";
+import { onBeforeMount,onMounted, ref } from 'vue';
+import constData from "../../../static/constData";
+import { ElMessage } from 'element-plus'
+import { useRouter } from "vue-router";
+
+const router = useRouter()
+const user = ref({
+  email: "3296189981@qq.com",
+  firstName: "xia",
+  lastName: "zhi",
+  password: "123456",
+  username: "1527342483132907520"
+})
+
+
+onBeforeMount(() => {
+  console.log(localStorage.getItem("username"));
+  
+  if (localStorage.getItem("username") != null)  {
+    axios({
+    method: "POST",
+    url: constData.url + "/system/user/get",
+    data: {
+      username: localStorage.getItem("username"),
+    },
+  })
+    .then((res) => {
+      console.log(res);
+      user.value =  res.data.data[0]
+    })
+    .catch((err) => {
+      ElMessage.error('登录异常，请重试');
+      console.log(err);
+    });
+  }
+})
+
+onMounted(()=>{
+  if(window.localStorage.getItem("username") == null || window.localStorage.getItem("username") == ""){
+      ElMessage.warning("Please login first");
+      router.push("/login");
+  }
+})
 </script>
 
 <template>
@@ -13,8 +57,8 @@
       <p class="py-6 text-xl font-semibold">Contact Information</p>
     </div>
     <div>
-      <p>xxxxxxxxx</p>
-      <p>xxxxxx@outlook.com</p>
+      <p>{{ user.firstName + user.lastName }}</p>
+      <p>{{ user.email }}</p>
     </div>
     <div class="text-red-500">
       <router-link to="editMyAccount">
