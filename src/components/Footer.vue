@@ -31,9 +31,7 @@
             </a>
           </div>
         </div>
-        <a class="text-2xl hover:text-blue-400" href="mailto:wjhappy337@gmail.com">
-          <p class="py-5">wjhappy337@gmail.com</p>
-        </a>
+        <p class="text-2xl py-5">wjhappy337@gmail.com</p>
       </div>
     </div>
     <div class="md:flex-1 md:text-left text-center py-4">
@@ -65,6 +63,7 @@
   color: #ffffff;
   border-top: 3px solid #1976d2;
 }
+
 .image {
   width: 200px;
   margin: 0 auto;
