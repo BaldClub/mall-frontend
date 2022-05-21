@@ -115,36 +115,55 @@ function changeImg(item) {
   </div>
   <div class="w-5/6 mx-auto border-l-2 border-r-2 border-t-2">
     <div class="w-auto grid-cols-3 grid text-center p-5 gap-16 text-red-400">
-      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" @click="show=0">DESCRIBE</div>
-      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" @click="show=1">FQA</div>
-      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" @click="show=2">REVIEW</div>
+      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" :class="{'bg-gray-200': show===0}"  @click="show=0">DESCRIBE</div>
+      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" :class="{'bg-gray-200': show===1}" @click="show=1">FQA</div>
+      <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" :class="{'bg-gray-200': show===2}" @click="show=2">REVIEW</div>
     </div>
-    <div v-show="show===0" class="text-xl px-4 lg:px-28 pb-5 grid gap-y-7">
-      <p>Adjustable range: 30.3 inches -48.2inches</p>
-      <p>Suitable for cutting and measuring stair treads,risers,window sills, closet shelves and some angled layouts</p>
-      <p>Aviation aluminium materials（7075 and 6061 Aluminum alloy),Anodized，resistant to wear and rust,sturdy and durable.After many tests, wooden tools will deform the screw holes after several times of use,it cannot be tightened.So we use the most reasonable Aluminum Alloy materials to ensure the accuracy and durability of the product.</p>
-      <p>The tool has enough thickness to avoid scratching the step surface.Light and effortless,the card slot slides smoothly.Good grip,flexible angle adjustment.Cut precisely.Save installation time</p>
-      <p>Patented product.As a professional staircase tool,the side panel installation of our product is very different from other products, it can stabilize angle, will not change the position easily, ensure high accuracy, and avoid wasting your plank and time.</p>
+    <div v-show="show===0" class="break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7">
+      <p>Just four steps to cut a set of stair stringers:measure height,online calculate,draw lines,and cut,even non-professionals can make perfect stair stringers.</p>
+      <p>Intelligent calculation of common stair construction board specifications (2x12,5/4x6,2x6,1x8,5/4x6),easy and flexible,and can be matched in various ways.</p>
+      <p>The step run limits are 10" to 11-1/2" deep,The step rise limits are 5" to 7-3/4" tall.The online calculator gives you different variables to choose from to adjust the stairs to your needs.</p>
+      <p>Anodized aluminum alloy material,sturdy and durable,the manual will guide the use in detail.</p>
+      <p>This cutting layout tool complies with The International Residential Code (IRC) and the International Building Code (IBC) contain regarding wood-framed stair.</p>
     </div>
-    <div v-show="show===1" class="break-normal text-xl px-4 lg:px-48 pb-5 grid gap-y-7">
+    <div v-show="show===1"  class=" break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7">
       <p>
-        <span class="text-xl font-bold">Q:</span> you ship to new zealand?
+        <span class="text-xl font-bold">QUESTIONS & ANSWERS</span>
       </p>
       <p>
-        <span class="text-xl font-bold">A:</span>Yes we do ship to New Zealand. You can also look up Sig Tools; they stock our products there.
+        <span class="text-xl font-bold">1.Can the product be shipped other than the US?</span>
       </p>
       <p>
-        <span class="text-xl font-bold">Q:</span>Do you ship to Canada?
+        Yes, you can buy it, and all other regions outside the US can be shipped directly from Amazon's warehouses, but additional charges.
       </p>
       <p>
-        <span class="text-xl font-bold">A:</span>Yes we do ship to Canada.
+        <span class="text-xl font-bold">2.Why can not buy directly from the website?</span>
       </p>
       <p>
-        <span class="text-xl font-bold">Q:</span>If I order 1 does that mean 1 pair ? Or do I have to order 2
+        At present, Amazon has the highest level of trust, and it can ensure the timeliness and safety of logistics.  
       </p>
       <p>
-        <span class="text-xl font-bold">A:</span>If you order 1, you will receive a pair (2 jigs, with screws)
+        <span class="text-xl font-bold">3.When will there be special offers?</span>
       </p>
+      <p>
+        At present, we are not ready to start selling specials. The specials are mainly for products with slight defects, such as oxidation problems, but do not affect normal use.
+      </p>
+      <p>
+        <span class="text-xl font-bold">4.how to contact you?</span>
+      </p>
+      <p>
+        If you need to contact us, you can leave a message or send an email to wjhappy337@gmail.com, or you can directly click on the social media page at the end of the page to contact us on social platforms (Facebook, Instagram, Pinterest, Youtube)
+      </p>
+       <p>
+        <span class="text-xl font-bold">5.What should I do if I cannot understand the instructions?</span>
+      </p>
+      <p>
+        You can find our product videos on youtube to learn:
+        <a href="https:\\www.youtube.com/channel/UCq_dOTFWmH26YKu-vSk2s5g" class=" text-blue-500">
+          www.youtube.com/channel/UCq_dOTFWmH26YKu-vSk2s5g
+        </a>
+      </p>
+      
     </div>
     <div v-show="show===2" class="break-normal text-xl px-4 lg:px-48 pb-5 grid gap-y-7">
       <div v-for="item in user" :key="item" class=" py-4">

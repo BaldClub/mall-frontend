@@ -179,7 +179,11 @@ function getPdf(){
   <!-- <button @click="getPdf">shar</button> -->
   <div class="w-9/12 mx-auto">
     <div class="w-full mt-2">
-      <img src="@/assets/img/video.png"/>
+      
+        <a href="https://youtu.be/P7Go56zU0cE">
+            <img src="@/assets/img/video.png" alt="">
+        </a>        
+      <!-- <img src="@/assets/img/video.png"/> -->
     </div>
     <div class="w-auto">
       <h1 class="text-xl md:text-4xl mt-2 font-extrabold">STAIR CALCULATOR</h1>

@@ -57,7 +57,11 @@ function toDetail(data){
 
 <template>
     <div class=" w-5/6 mx-auto">
-        <img src="../assets/img/index2.png" alt="">        
+        <!-- <video src="https://youtu.be/P7Go56zU0cE"></video> -->
+
+        <a href="https://youtu.be/P7Go56zU0cE">
+            <img src="../assets/img/index2.png" alt="">
+        </a>        
     </div>
     <div class=" w-5/6 mx-auto grid lg:grid-cols-2 grid-cols-1 py-7">
         <div class=" mx-4 border-2 border-black mt-2 cursor-pointer" v-for="item,index in date" :key="index" @click="toDetail(item)">

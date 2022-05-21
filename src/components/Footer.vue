@@ -31,6 +31,9 @@
             </a>
           </div>
         </div>
+        <a class="text-2xl hover:text-blue-400" href="mailto:wjhappy337@gmail.com">
+          <p class="py-5">wjhappy337@gmail.com</p>
+        </a>
       </div>
     </div>
     <div class="md:flex-1 md:text-left text-center py-4">
