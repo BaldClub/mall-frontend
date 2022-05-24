@@ -182,7 +182,7 @@ function getPdf() {
       <!-- <a href="https://youtu.be/P7Go56zU0cE">
           <img src="@/assets/img/video.png" alt="">
       </a>         -->
-      <iframe width="1400" height="720" src="https://www.youtube.com/embed/P7Go56zU0cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="400px" height="200" src="https://www.youtube.com/embed/P7Go56zU0cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <!-- <video controls width="1427">
 
         <source src="https://youtu.be/P7Go56zU0cE" type="video/webm">
