@@ -8,13 +8,13 @@ const router = useRouter()
 
 const navigation = [
   { name: 'My Account', href: '/myAccountView/myAccount', current: false },
-  { name: 'My Wish List', href: '/myAccountView/myWishList', current: false },
+  // { name: 'My Wish List', href: '/myAccountView/myWishList', current: false },
   { name: 'Sign In', href: '/login', current: false },
 ]
 
 const navigationTo = [
   { name: 'My Account', href: '/myAccountView/myAccount', current: false },
-  { name: 'My Wish List', href: '/myAccountView/myWishList', current: false },
+  // { name: 'My Wish List', href: '/myAccountView/myWishList', current: false },
   { name: 'Sign In', href: '/login', current: false },
   { name: 'Products', href: '/', current: false },
   { name: 'Specials', href: '#', current: false },

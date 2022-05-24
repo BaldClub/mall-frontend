@@ -16,11 +16,15 @@ const form = ref({
 
 onMounted(() => {
   if (localStorage.getItem("username") != null)  {
-    router.push("/");
-    ElMessage.success({
-      message: "You are already logged in",
-      duration: 1000
-    });
+    // router.push("/");
+    // ElMessage.success({
+    //   message: "You are already logged in",
+    //   duration: 1000
+    // });
+    localStorage.removeItem("username");
+  }else{
+    ElMessage.warning("Please login first");
+    router.push("/login");
   }
 });
 
