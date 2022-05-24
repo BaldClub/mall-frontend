@@ -18,7 +18,7 @@ const navigationTo = [
   { name: 'Sign In', href: '/login', current: false },
   { name: 'Products', href: '/', current: false },
   { name: 'Specials', href: '#', current: false },
-  { name: 'Stair Calculator', href: '/login', current: false },
+  { name: 'Stair Calculator', href: '/Calculator', current: false },
   { name: 'Warranty Code', href: '/code', current: false },
   { name: 'Contact Us', href: '/contact', current: false },
 ]
@@ -118,7 +118,7 @@ function goama(){
       <div class="product flex-1 text-2xl text-white py-4 hover:bg-yellow-500 cursor-pointer">
         <router-link to="/">Products</router-link>
 
-        <div class="select w-1/6 grid grid-rows-2 absolute"> 
+        <div class="select w-1/6 grid grid-rows-2 absolute z-10"> 
           <div
             class="hover:bg-yellow-400 cursor-pointer bg-yellow-300 col-span-1 border-2 border-black text-center p-2 text-sm text-gray-500"
             @click="secondDetail" id="first-detail"
@@ -172,6 +172,7 @@ function goama(){
   .second-detail{
     list-style: none;
     position: absolute;
+    z-index: 10;
     width: 100%;
     left: 100%;
     top: -2px;

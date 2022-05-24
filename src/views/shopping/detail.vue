@@ -91,7 +91,16 @@ function changeImg(item) {
         </button>
       </div>
       <div class="w-auto">
-        <img src="../../assets/img/uTools_1647697823271.png" />
+        <!-- <img src="../../assets/img/uTools_1647697823271.png" /> -->
+         <!-- <video controls width="1427">
+
+        <source src="https://youtu.be/P7Go56zU0cE" type="video/webm">
+
+        <source src="https://youtu.be/P7Go56zU0cE" type="video/mp4">
+
+        Sorry, your browser doesn't support embedded videos.
+      </video> -->
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/P7Go56zU0cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p class="font-black text-xl m-2">
         US

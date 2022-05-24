@@ -26,27 +26,27 @@ const T = ref([]);
 const Rise = ref([]);
 
 const request = ref({
-    height: 0,
-    t: 0,
-    stepRise: 0, 
-    tread: 0,
-    riser: 0,
-    noSing: 0,
-    step: 0,
-    attach: 0 
+  height: 0,
+  t: 0,
+  stepRise: 0,
+  tread: 0,
+  riser: 0,
+  noSing: 0,
+  step: 0,
+  attach: 0
 });
 
 const result = ref({
-    bottomRise: 0,
-    tread: 0,
-    topTread: 0,
-    totalRunProjection: 0,
-    totalRise: 0,
-    angle: 0,
-    stringerHeight: 0,
-    stringerLength: 0,
-    boardLength : 0,
-    stepRise: 0,
+  bottomRise: 0,
+  tread: 0,
+  topTread: 0,
+  totalRunProjection: 0,
+  totalRise: 0,
+  angle: 0,
+  stringerHeight: 0,
+  stringerLength: 0,
+  boardLength: 0,
+  stepRise: 0,
 });
 
 function param_click(value) {
@@ -61,7 +61,7 @@ function treadClick(value) {
   request.value.tread = value;
 }
 function riserClick(value) {
-  request.value.riser= value;
+  request.value.riser = value;
 }
 function nosingClick(value) {
   request.value.noSing = value;
@@ -74,7 +74,7 @@ function huansuan_str(c) {
   let i = 0;
   let x = c - Math.floor(c);
   if (x != 0) {
-    for (i = 0; i < xiaoshu.length ; i++) {
+    for (i = 0; i < xiaoshu.length; i++) {
       if (x <= xiaoshu[i]) {
         let a = x - xiaoshu[i - 1];
         let b = xiaoshu[i] - x;
@@ -82,7 +82,7 @@ function huansuan_str(c) {
         break;
       }
     }
-    if( i == xiaoshu.length )
+    if (i == xiaoshu.length)
       i = xiaoshu.length - 1
 
     return Math.floor(c).toString() + "-" + fenshu[i];
@@ -108,7 +108,7 @@ function huansuan_num(c) {
     for (i = 0; i < xiaoshu.length - 1; i++) {
       if (x <= xiaoshu[i]) {
         let a = x - xiaoshu[i - 1];
-        if(i == 0)
+        if (i == 0)
           a = 0
         let b = xiaoshu[i] - x;
 
@@ -116,7 +116,7 @@ function huansuan_num(c) {
         break;
       }
     }
-    if( i == xiaoshu.length )
+    if (i == xiaoshu.length)
       i = xiaoshu.length - 1
     return Math.floor(c) + xiaoshu[i];
   }
@@ -129,24 +129,24 @@ function jisuan(T) {
   // 台阶高度
   if (request.value.attach == 0) i = 1;
   request.value.stepRise = huansuan_num(X / (T + i));
-  
+
   request.value.height = X;
 
   request.value.t = T;
 
-    axios({
-        method: "post",
-        url: constData.url + "/count/getResult",
-        data: request.value
-    }).then((res)=>{
-        console.log(res.data);
-        result.value = res.data.data;
-        result_state.value = true;
-        ElMessage.success("计算成功");
-    }).catch((err)=>{
-        ElMessage.error("计算错误，请重试");
-        console.log(err);
-    })
+  axios({
+    method: "post",
+    url: constData.url + "/count/getResult",
+    data: request.value
+  }).then((res) => {
+    console.log(res.data);
+    result.value = res.data.data;
+    result_state.value = true;
+    ElMessage.success("计算成功");
+  }).catch((err) => {
+    ElMessage.error("计算错误，请重试");
+    console.log(err);
+  })
   console.log(request.value);
 }
 
@@ -157,11 +157,11 @@ function start_jisuan() {
   let max = Math.floor(num.value / 5.5);
   T.value = [];
   Rise.value = [];
-  let j=0;
-  if(request.value.attach == 0)
+  let j = 0;
+  if (request.value.attach == 0)
     j = 1;
   for (let i = min; i <= max && i <= 100; i++) {
-    Rise.value.push(huansuan_str(huansuan_num((num.value + num_1.value) / (i - 1 + request.value.attach  + j))));
+    Rise.value.push(huansuan_str(huansuan_num((num.value + num_1.value) / (i - 1 + request.value.attach + j))));
     T.value.push(i - 1 + request.value.attach);
   }
 
@@ -171,7 +171,7 @@ function start_jisuan() {
 }
 
 
-function getPdf(){
+function getPdf() {
   inportPdf(resultPdf.value);
 }
 </script>
@@ -179,10 +179,19 @@ function getPdf(){
   <!-- <button @click="getPdf">shar</button> -->
   <div class="w-9/12 mx-auto">
     <div class="w-full mt-2">
-      
-        <a href="https://youtu.be/P7Go56zU0cE">
-            <img src="@/assets/img/video.png" alt="">
-        </a>        
+      <!-- <a href="https://youtu.be/P7Go56zU0cE">
+          <img src="@/assets/img/video.png" alt="">
+      </a>         -->
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/P7Go56zU0cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!-- <video controls width="1427">
+
+        <source src="https://youtu.be/P7Go56zU0cE" type="video/webm">
+
+        <source src="https://youtu.be/P7Go56zU0cE" type="video/mp4">
+
+        Sorry, your browser doesn't support embedded videos.
+      </video> -->
+
       <!-- <img src="@/assets/img/video.png"/> -->
     </div>
     <div class="w-auto">
@@ -208,12 +217,7 @@ function getPdf(){
             <label>Fraction</label>
           </div>
           <el-select v-model="num_1" class="m-2" placeholder="Select">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
         </div>
@@ -227,29 +231,17 @@ function getPdf(){
           Tread Board Type
         </h4>
         <div class="relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.tread == 0 }"
-            @click="treadClick(0)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.tread == 0 }" @click="treadClick(0)"></div>
           <img src="@/assets/img/1/2-54x12.png" alt="" />
           <h4>2 - 5/4x6</h4>
         </div>
         <div class="relative">
-          <div
-            class="mouban  absolute left-0"
-            :class="{ active: request.tread == 1 }"
-            @click="treadClick(1)"
-          ></div>
+          <div class="mouban  absolute left-0" :class="{ active: request.tread == 1 }" @click="treadClick(1)"></div>
           <img src="@/assets/img/1/2-2x6.png" alt="" />
           <h4>2 - 2x6</h4>
         </div>
         <div class="relative">
-          <div
-            class="mouban  absolute left-0"
-            :class="{ active: request.tread == 2 }"
-            @click="treadClick(2)"
-          ></div>
+          <div class="mouban  absolute left-0" :class="{ active: request.tread == 2 }" @click="treadClick(2)"></div>
           <img src="@/assets/img/1/1-2x12.png" alt="" />
           <h4>1 - 2x12</h4>
         </div>
@@ -263,20 +255,12 @@ function getPdf(){
           Riser Board Type
         </h4>
         <div class=" relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.riser == 0 }"
-            @click="riserClick(0)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.riser == 0 }" @click="riserClick(0)"></div>
           <img src="@/assets/img/2/3-4inch(1x8).png" alt="" />
           <h4>3/4 inch (1x8)</h4>
         </div>
         <div class=" relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.riser == 1 }"
-            @click="riserClick(1)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.riser == 1 }" @click="riserClick(1)"></div>
           <img src="@/assets/img/2/1inch(5-4x6).png" alt="" />
           <h4>1 inch (5/4x6)</h4>
         </div>
@@ -290,29 +274,17 @@ function getPdf(){
           Nosing Overhang
         </h4>
         <div class="relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.noSing == 0 }"
-            @click="nosingClick(0)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.noSing == 0 }" @click="nosingClick(0)"></div>
           <img src="@/assets/img/3/1inch.png" alt="" />
           <h4>1 inch</h4>
         </div>
         <div class="relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active:  request.noSing  == 1 }"
-            @click="nosingClick(1)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.noSing == 1 }" @click="nosingClick(1)"></div>
           <img src="@/assets/img/3/3-4inch.png" alt="" />
           <h4>3/4 inch</h4>
         </div>
         <div class="relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active:  request.noSing  == 2 }"
-            @click="nosingClick(2)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.noSing == 2 }" @click="nosingClick(2)"></div>
           <img src="@/assets/img/3/1-2inch.png" alt="" />
           <h4>1/2 inch</h4>
         </div>
@@ -326,52 +298,40 @@ function getPdf(){
           First Step Attach
         </h4>
         <div class="relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.attach == 0 }"
-            @click="attachClick(0)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.attach == 0 }" @click="attachClick(0)"></div>
           <img src="@/assets/img/4/3d-1.png" alt="" />
           <h4>Dropped</h4>
         </div>
         <div class=" relative">
-          <div
-            class="mouban absolute left-0"
-            :class="{ active: request.attach  == 1 }"
-            @click="attachClick(1)"
-          ></div>
+          <div class="mouban absolute left-0" :class="{ active: request.attach == 1 }" @click="attachClick(1)"></div>
           <img src="@/assets/img/4/3d-2.png" alt="" />
           <h4>Flush</h4>
         </div>
       </div>
 
       <div class="content-button">
-        <el-button type="danger" @click="start_jisuan" size="large"
-          >Calculate Stairs</el-button
-        >
-        <el-button type="danger" size="large">Buy Tool</el-button>
+        <el-button type="danger" @click="start_jisuan" size="large">Calculate Stairs</el-button>
+        <a href="https://www.amazon.com/dp/B09TVVKW5K" class="ml-10">
+          <el-button type="danger" size="large">Buy Tool</el-button>
+
+        </a>
       </div>
     </div>
 
-    <div id="result" ref="resultPdf" :class="{'hidden':!result_state}">
+    <div id="result" ref="resultPdf" :class="{ 'hidden': !result_state }">
       <div class="options">
         <h4>Options</h4>
         <ul>
           <li v-for="(item, index) in T" :key="item">
-            <input
-              type="radio"
-              name="selectedOption"
-              @click="param_click(item)"
-              :value="item"
-              v-model="param"
-            />{{ item }} treads of {{ Rise[index] }}" rise
+            <input type="radio" name="selectedOption" @click="param_click(item)" :value="item" v-model="param" />{{ item
+            }} treads of {{ Rise[index] }}" rise
           </li>
         </ul>
       </div>
       <el-button type="danger" size="large" @click="getPdf"> PDF</el-button>
       <div class="result">
         <h4>Result</h4>
-        <h5>Based on 2 treads</h5>
+        <h5>Based on {{ param }} treads</h5>
         <div>
           <h3>
             <strong> Tread Depth: {{ huansuan_str(result.tread) }}"</strong>
@@ -385,13 +345,11 @@ function getPdf(){
         <div>
           <h3>
             <strong>
-              Top Tread Depth: {{ huansuan_str(result.topTread) }}"</strong
-            >
+              Top Tread Depth: {{ huansuan_str(result.topTread) }}"</strong>
           </h3>
           <h3>
             <strong>
-              Bottom Step Rise: {{ huansuan_str(result.bottomRise) }}"</strong
-            >
+              Bottom Step Rise: {{ huansuan_str(result.bottomRise) }}"</strong>
           </h3>
           <h3>
             <strong>Angle: {{ result.angle }}°</strong>
@@ -455,12 +413,10 @@ function getPdf(){
             <strong>{{ result.angle }} °</strong>
           </h4>
         </div>
-         <div class="img-text">
+        <div class="img-text">
           <h4>
-            <strong
-              >This drawing does not reflect the number of stairs in your
-              staircase.</strong
-            >
+            <strong>This drawing does not reflect the number of stairs in your
+              staircase.</strong>
           </h4>
         </div>
       </div>
@@ -515,10 +471,8 @@ function getPdf(){
 
         <div class="img-text">
           <h4>
-            <strong
-              >This drawing does not reflect the number of stairs in your
-              staircase.</strong
-            >
+            <strong>This drawing does not reflect the number of stairs in your
+              staircase.</strong>
           </h4>
         </div>
       </div>
@@ -533,6 +487,7 @@ function getPdf(){
   text-align: center;
   height: 40px;
 }
+
 .cont-video-a a {
   background-color: #d9534f;
   border-color: #d43f3a;
@@ -546,15 +501,18 @@ function getPdf(){
   width: 70%;
   margin: 0px auto;
 }
+
 .content h1 {
   color: #2f95f9;
 }
+
 .content-hr {
   width: 100%;
   height: 5px;
   margin: 15px 0px;
   background-color: #2f95f9;
 }
+
 h4 {
   font-family: "Oswald", sans-serif;
   font-weight: normal;
@@ -562,6 +520,7 @@ h4 {
   margin: 3px 0px;
   padding: 3px 0px;
 }
+
 .badge-error {
   display: inline-block;
   min-width: 10px;
@@ -577,10 +536,12 @@ h4 {
   border-radius: 10px;
   background-color: #f00;
 }
+
 .rise-label {
   display: inline-block;
   margin: 0px 10px;
 }
+
 .rise-label .text {
   margin: 5px;
   color: #666;
@@ -598,6 +559,7 @@ h4 {
   margin: 10px;
   text-align: center;
 }
+
 .tread-board-type .mouban {
   position: absolute;
   margin: 0px;
@@ -606,6 +568,7 @@ h4 {
   height: 200px;
   width: 200px;
 }
+
 .tread-board-type .mouban:hover {
   cursor: pointer;
   background-color: #ffffff00;
@@ -623,13 +586,16 @@ h4 {
   border-color: #faebcc;
   border-radius: 10px;
 }
+
 .options ul {
   list-style: none;
   padding: 0px;
 }
+
 .options ul li {
   margin: 10px;
 }
+
 .result {
   width: 100%;
   margin-top: 25px;
@@ -639,6 +605,7 @@ h4 {
   border-color: #bce8f1;
   border-radius: 10px;
 }
+
 .result div {
   width: 90%;
   margin: 0px auto;
@@ -647,6 +614,7 @@ h4 {
   background-color: #fff;
   padding: 20px;
 }
+
 .result div h3 {
   margin: 5px 0px;
 }
@@ -661,6 +629,7 @@ h4 {
   height: 715px;
   width: 1083px;
 }
+
 .result-img img {
   position: absolute;
   width: 1083px;
@@ -670,7 +639,8 @@ h4 {
   text-align: center;
   color: #000000;
 }
-.result-img div{
+
+.result-img div {
   width: 100px;
 }
 
@@ -695,6 +665,7 @@ h4 {
   left: 414px;
   z-index: 2;
 }
+
 .tread {
   position: absolute;
   top: 189px;
@@ -708,6 +679,7 @@ h4 {
   left: 766px;
   z-index: 2;
 }
+
 .total-rise {
   position: absolute;
   top: 307px;
@@ -715,6 +687,7 @@ h4 {
   width: 100px;
   z-index: 2;
 }
+
 .stringer-length {
   position: absolute;
   top: 532px;
@@ -757,6 +730,7 @@ h4 {
   left: 414px;
   z-index: 2;
 }
+
 .tread-1 {
   position: absolute;
   top: 145px;
@@ -770,6 +744,7 @@ h4 {
   left: 769px;
   z-index: 2;
 }
+
 .total-rise-1 {
   position: absolute;
   top: 307px;
@@ -777,6 +752,7 @@ h4 {
   width: 100px;
   z-index: 2;
 }
+
 .stringer-length-1 {
   position: absolute;
   top: 463px;
@@ -798,11 +774,11 @@ h4 {
   z-index: 2;
 }
 
-.img-text{
+.img-text {
   width: 125px;
-    position: absolute;
-    top: 318px;
-    left: 72px;
-    z-index: 2;
+  position: absolute;
+  top: 318px;
+  left: 72px;
+  z-index: 2;
 }
 </style>

@@ -16,7 +16,7 @@
                         </p>
                     </div>
                 </router-link>
-                <router-link to="myOrders">
+                <!-- <router-link to="myOrders">
                     <div class=" hover:bg-gray-300 px-5 py-2  cursor-pointer">
                         <p>
                         
@@ -24,31 +24,31 @@
                         
                         </p>
                     </div>
-                </router-link>
-                <router-link to="myWishList">
+                </router-link> -->
+                <!-- <router-link to="myWishList">
                     <div class=" hover:bg-gray-300 px-5 py-2 border-b-2 border-black  cursor-pointer">
                         <p>
                             
                             My Wish List
                         </p>
                     </div>
-                </router-link>
-                <router-link to="addressBook">
+                </router-link> -->
+                <!-- <router-link to="addressBook">
                     <div class=" hover:bg-gray-300 px-5 py-2  cursor-pointer">
                         <p>
                         Address Book
                             
                         </p>
                     </div>
-                </router-link>
-                <router-link to="accountInformation">
+                </router-link> -->
+                <!-- <router-link to="accountInformation">
                     <div class=" hover:bg-gray-300 px-5 py-2 border-b-2 border-black  cursor-pointer">
                         <p>
                             Account Infromation
                         </p>
                     </div>
-                </router-link>
-                <router-link to="myProductReviews">
+                </router-link> -->
+                <!-- <router-link to="myProductReviews">
                     <div class=" hover:bg-gray-300 px-5 py-2  cursor-pointer">
                         <p>
                             
@@ -56,7 +56,7 @@
                             
                         </p>
                     </div>
-                </router-link>
+                </router-link> -->
             </div>
         </div>
         <div class="col-span-2">
