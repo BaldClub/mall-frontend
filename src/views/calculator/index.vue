@@ -179,7 +179,7 @@ function getPdf() {
   <!-- <button @click="getPdf">shar</button> -->
   <div class="w-9/12 mx-auto">
     <div class="w-full mt-2">
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/P7Go56zU0cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/wUT3B-wvNis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <!-- <img src="@/assets/img/video.png"/> -->
     </div>
     <div class="w-auto">
