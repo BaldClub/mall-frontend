@@ -299,7 +299,7 @@ function getPdf() {
 
       <div class="content-button">
         <el-button type="danger" @click="start_jisuan" size="large">Calculate Stairs</el-button>
-        <a href="https://www.amazon.com/dp/B09TVVKW5K" class="ml-10">
+        <a href="https://www.amazon.com/dp/B09TVVKW5K?maas=maas_adg_CDB5F252C0104EAE31179A033D099B53_afap_abs&ref_=aa_maas&tag=maas" class="ml-10">
           <el-button type="danger" size="large">Buy Tool</el-button>
 
         </a>
@@ -354,7 +354,7 @@ function getPdf() {
           </h3>
         </div>
       </div>
-      <div class="result-img" v-if="!attach">
+      <div class="result-img" v-if="!request.attach">
         <img src="@/assets/img/5/cssDropped.png" alt="" />
         <div class="total_run_projection">
           <h4>
