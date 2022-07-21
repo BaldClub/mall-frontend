@@ -41,9 +41,9 @@ function getDate() {
         date.value = res.data.data;
         console.log(date.value[0].imgList[0]);
         
-        ElMessage.success("数据列表获取成功");
+        ElMessage.success("Data list successfully acquired!");
     }).catch((err)=>{
-        ElMessage.error("数据获取错误，请重试");
+        ElMessage.error("Data error, please try again!");
         console.log(err);
     })
 }

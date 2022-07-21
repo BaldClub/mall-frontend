@@ -34,7 +34,7 @@ onBeforeMount(() => {
         data.value.imgList[0];
     })
     .catch((err) => {
-      ElMessage.error("数据获取错误，请重试");
+      ElMessage.error("Data error, please try again!");
       router.push("/");
     });
 

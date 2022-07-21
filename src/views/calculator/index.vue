@@ -142,9 +142,9 @@ function jisuan(T) {
     console.log(res.data);
     result.value = res.data.data;
     result_state.value = true;
-    ElMessage.success("计算成功");
+    ElMessage.success("Calculation is accurate!");
   }).catch((err) => {
-    ElMessage.error("计算错误，请重试");
+    ElMessage.error("Calculation is error, please try again!");
     console.log(err);
   })
   console.log(request.value);
