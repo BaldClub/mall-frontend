@@ -25,8 +25,6 @@ onMounted(() => {
 
 function getDate() {
 
-    console.log('111');
-    
     window.localStorage.setItem("type", "")
     
     axios({

@@ -161,10 +161,10 @@ function start_jisuan() {
   if (request.value.attach == 0)
     j = 1;
   for (let i = min; i <= max && i <= 100; i++) {
-    Rise.value.push(huansuan_str(huansuan_num((num.value + num_1.value) / (i - 1 + request.value.attach + j))));
+    let riseItem = huansuan_str(huansuan_num((num.value + num_1.value) / (i - 1 + request.value.attach + j)))  
+    Rise.value.push(riseItem);
     T.value.push(i - 1 + request.value.attach);
   }
-
   param.value = T.value[0];
 
   jisuan(T.value[0]);

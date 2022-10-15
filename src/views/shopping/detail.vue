@@ -23,7 +23,7 @@ onBeforeMount(() => {
     url: constData.url + "/system/product/getProduct/" + id,
   })
     .then((res) => {
-      console.log(res.data.data);
+      // console.log(res.data.data);
       
       data.value = res.data.data;
       img.value =
@@ -129,50 +129,11 @@ function changeImg(item) {
       <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" :class="{'bg-gray-200': show===1}" @click="show=1">FQA</div>
       <div class="p-3 font-black hover:bg-gray-200 cursor-pointer" :class="{'bg-gray-200': show===2}" @click="show=2">REVIEW</div>
     </div>
-    <div v-show="show===0" class="break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7">
-      <p>Just four steps to cut a set of stair stringers:measure height,online calculate,draw lines,and cut,even non-professionals can make perfect stair stringers.</p>
-      <p>Intelligent calculation of common stair construction board specifications (2x12,5/4x6,2x6,1x8,5/4x6),easy and flexible,and can be matched in various ways.</p>
-      <p>The step run limits are 10" to 11-1/2" deep,The step rise limits are 5" to 7-3/4" tall.The online calculator gives you different variables to choose from to adjust the stairs to your needs.</p>
-      <p>Anodized aluminum alloy material,sturdy and durable,the manual will guide the use in detail.</p>
-      <p>This cutting layout tool complies with The International Residential Code (IRC) and the International Building Code (IBC) contain regarding wood-framed stair.</p>
+    <div v-show="show===0" class="break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7" v-html="data.describe">
+      
     </div>
-    <div v-show="show===1"  class=" break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7">
-      <p>
-        <span class="text-xl font-bold">QUESTIONS & ANSWERS</span>
-      </p>
-      <p>
-        <span class="text-xl font-bold">1.Can the product be shipped other than the US?</span>
-      </p>
-      <p>
-        Yes, you can buy it, and all other regions outside the US can be shipped directly from Amazon's warehouses, but additional charges.
-      </p>
-      <p>
-        <span class="text-xl font-bold">2.Why can not buy directly from the website?</span>
-      </p>
-      <p>
-        At present, Amazon has the highest level of trust, and it can ensure the timeliness and safety of logistics.  
-      </p>
-      <p>
-        <span class="text-xl font-bold">3.When will there be special offers?</span>
-      </p>
-      <p>
-        At present, we are not ready to start selling specials. The specials are mainly for products with slight defects, such as oxidation problems, but do not affect normal use.
-      </p>
-      <p>
-        <span class="text-xl font-bold">4.how to contact you?</span>
-      </p>
-      <p>
-        If you need to contact us, you can leave a message or send an email to wjhappy337@gmail.com, or you can directly click on the social media page at the end of the page to contact us on social platforms (Facebook, Instagram, Pinterest, Youtube)
-      </p>
-       <p>
-        <span class="text-xl font-bold">5.What should I do if I cannot understand the instructions?</span>
-      </p>
-      <p>
-        You can find our product videos on youtube to learn:
-        <a href="https:\\www.youtube.com/channel/UCq_dOTFWmH26YKu-vSk2s5g" class=" text-blue-500">
-          www.youtube.com/channel/UCq_dOTFWmH26YKu-vSk2s5g
-        </a>
-      </p>
+    <div v-show="show===1"  class=" break-normal text-xl px-4 lg:px-48 pb-28 grid gap-y-7" v-html="data.fqa">
+      
       
     </div>
     <div v-show="show===2" class="break-normal text-xl px-4 lg:px-48 pb-5 grid gap-y-7">
