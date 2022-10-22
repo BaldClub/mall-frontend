@@ -100,11 +100,11 @@ function changeImg(item) {
         <span class="text-red-600 text-3xl">${{ data.price }}</span> &nbsp;&nbsp;Free Shipping In The US
       </p>
       <div class="my-6">
-        <span class="text-xl">Number:</span>
+        <span class="text-xl mr-5">Number:</span>
         <el-input-number v-model="num" :min="1" :step="1" :size="1" />
       </div>
       <div class="w-auto">
-        <a :href="data.type">
+        <a :href="data.href">
           <button class="md:w-1/3 w-auto p-1 md:p-4 hover:bg-gray-300 border-2 rounded-xl">Amazon To Buy</button>
         </a>
       </div>
