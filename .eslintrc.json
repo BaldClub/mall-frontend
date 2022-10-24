@@ -19,6 +19,6 @@
     "rules": {
     },
     "ignorePatterns":[
-        "**/*.json", "**/*.md"
+        "**/*.json", "**/*.md", "node_modules"
     ]
 }
