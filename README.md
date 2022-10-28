@@ -1,4 +1,5 @@
 # mall - 跨境电商平台 - frontend
+
 # Nuxt 3 Minimal Starter
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
