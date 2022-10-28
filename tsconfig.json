@@ -1,7 +1,7 @@
 {
   "extends": "./.nuxt/tsconfig.json",
 
-  "compilerOptions":{
-    "module": "CommonJS",         
+  "compilerOptions": {
+    "module": "CommonJS"
   }
 }
