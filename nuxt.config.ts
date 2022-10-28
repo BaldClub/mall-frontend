@@ -6,12 +6,6 @@ export default defineNuxtConfig({
         scss: {
           additionalData: '@import "@/assets/css/main.scss";',
         },
-
-
-
-
-
-        
       },
     },
   },
