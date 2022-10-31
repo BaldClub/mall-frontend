@@ -1,6 +1,8 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext"
-  }
+    "module": "ESNext",
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules"]
 }
